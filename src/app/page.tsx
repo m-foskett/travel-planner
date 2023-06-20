@@ -6,6 +6,7 @@ export default function Home() {
       <div className='flex flex-col'>
         <h1 className='text-white font-semibold text-2xl'>Travel Planner</h1>
         <h2 className='text-white font-semibold pt-3'>Choose a starting date...</h2>
+        <h2 className='text-white font-semibold pt-3'>Choose an end date...</h2>
       </div>
     </main>
   )
