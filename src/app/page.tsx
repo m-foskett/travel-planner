@@ -1,4 +1,5 @@
 import { DateRangePicker } from "@/components/DateRangePicker";
+import { LoadingButton } from "@/components/LoadingButton";
 
 export default function Home() {
   return (
@@ -6,7 +7,12 @@ export default function Home() {
       <div className='flex flex-col'>
         <h1 className='text-white font-semibold text-3xl'>Travel Planner</h1>
         <h2 className='text-white font-semibold pt-3'>Choose your trip dates...</h2>
-        <DateRangePicker />
+        <div className="flex flex-row">
+          {/* Date Range Picker */}
+          <DateRangePicker />
+          {/* Loading Button */}
+          <LoadingButton buttonText = 'Generating Planner'/>
+        </div>
       </div>
     </main>
   )
