@@ -1,7 +1,12 @@
+"use client"
+
 import { DateRangePicker } from "@/components/DateRangePicker";
 import { LoadingButton } from "@/components/LoadingButton";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function Home() {
+  const [loading, setLoading] = useState<boolean>(false)
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-black">
       <div className='flex flex-col'>
@@ -10,8 +15,14 @@ export default function Home() {
         <div className="flex flex-row">
           {/* Date Range Picker */}
           <DateRangePicker />
-          {/* Loading Button */}
-          <LoadingButton buttonText = 'Generating Planner'/>
+          {/* Buttons */}
+          {loading ? (
+            <LoadingButton buttonText = 'Generating Planner' />
+          ) : (
+            <Button onClick={() => setLoading(true)}>
+              Generate
+            </Button>
+          )}
         </div>
       </div>
     </main>
