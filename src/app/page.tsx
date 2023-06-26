@@ -7,6 +7,17 @@ import { useState } from "react";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false)
+  const [generated, setGenerated] = useState<boolean>(false)
+
+  const generateTrip = () => {
+    // Set loading state to true
+    setLoading(true)
+    // Set generated to true
+    setGenerated(true)
+    // Set loading state to false
+    setLoading(false)
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-900">
       <div className='flex flex-col'>
@@ -19,11 +30,17 @@ export default function Home() {
           {loading ? (
             <LoadingButton buttonText = 'Generating Planner' />
           ) : (
-            <Button onClick={() => setLoading(true)}>
+            <Button onClick={generateTrip}>
               Generate
             </Button>
           )}
         </div>
+        {/* Generated Content */}
+        {generated ? (
+          <div> Generated Trip Content </div>
+        ) : (
+          <div> No generated trip to show. </div>
+        )}
       </div>
     </main>
   )
