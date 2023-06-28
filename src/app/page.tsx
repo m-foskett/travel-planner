@@ -2,6 +2,7 @@
 
 import { DateRangePicker } from "@/components/DateRangePicker";
 import { LoadingButton } from "@/components/LoadingButton";
+import TripGrid from "@/components/TripGrid";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -37,7 +38,7 @@ export default function Home() {
         </div>
         {/* Generated Content */}
         {generated ? (
-          <div> Generated Trip Content </div>
+          <TripGrid />
         ) : (
           <div> No generated trip to show. </div>
         )}
