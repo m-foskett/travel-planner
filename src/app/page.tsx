@@ -4,6 +4,7 @@ import { DateRangePicker } from "@/components/DateRangePicker";
 import { LoadingButton } from "@/components/LoadingButton";
 import TripGrid from "@/components/TripGrid";
 import { Button } from "@/components/ui/button";
+import { format } from "date-fns";
 import { useState } from "react";
 import { DateRange } from "react-day-picker";
 
@@ -16,7 +17,7 @@ export default function Home() {
     // Set loading state to true
     setLoading(true)
     // Set generated to true
-    setGenerated(true)
+    if (dateRange != null) setGenerated(true);
     // Set loading state to false
     setLoading(false)
   }
@@ -28,8 +29,7 @@ export default function Home() {
         <h2 className='text-white font-semibold pt-3'>Choose your trip dates...</h2>
         <div className="flex flex-row">
           {/* Date Range Picker */}
-          {/* <DateRangePicker dateRange={dateRange} setDateRange={setDateRange}/> */}
-          <DateRangePicker/>
+          <DateRangePicker setDateRange={setDateRange}/>
           {/* Buttons */}
           {loading ? (
             <LoadingButton buttonText = 'Generating Planner' />
@@ -41,10 +41,7 @@ export default function Home() {
         </div>
         {/* Generated Content */}
         {generated ? (
-          <div>
-            <TripGrid />
-            <div> Your trip is between {String(dateRange)} </div>
-          </div>
+            <TripGrid dateRange={dateRange}/>
         ) : (
           <div> No generated trip to show. </div>
         )}
