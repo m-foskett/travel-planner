@@ -1,4 +1,4 @@
-import { format } from 'date-fns'
+import { differenceInDays, format } from 'date-fns'
 import React from 'react'
 import { DateRange } from "react-day-picker"
 
@@ -7,22 +7,23 @@ interface TripGridProps {
 }
 
 function TripGrid({dateRange}: TripGridProps) {
+  // Days in trip
+  var daysInTrip: number = 2;
+  // Calculate days within date range
+  if(dateRange?.from && dateRange.to)
+  {
+    daysInTrip = differenceInDays(dateRange.from, dateRange.to);
+  }
+
   return (
-    <div>
-      {dateRange?.from ? (
-        dateRange.to ? (
-          <>
-            {format(dateRange.from, "LLL dd, y")} -{" "}
-            {format(dateRange.to, "LLL dd, y")}
-          </>
-        ) : (
-          format(dateRange.from, "LLL dd, y")
-        )
-      ) : (
-        <span>Nothing to display!</span>
-      )}
-    </div>
-  )
+    // Rendering elements by number of days
+    // [...Array(daysInTrip),].map(
+    //   (value: undefined, index: number) => (
+      <div></div>
+      // <div key={index}>{value}</div>
+      // )
+    // )
+  );
 }
 
 export default TripGrid
