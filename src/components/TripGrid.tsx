@@ -12,17 +12,16 @@ function TripGrid({dateRange}: TripGridProps) {
   // Calculate days within date range
   if(dateRange?.from && dateRange.to)
   {
-    daysInTrip = differenceInDays(dateRange.from, dateRange.to);
+    daysInTrip = differenceInDays(dateRange.to, dateRange.from) + 1;
   }
 
   return (
     // Rendering elements by number of days
-    // [...Array(daysInTrip),].map(
-    //   (value: undefined, index: number) => (
-      <div></div>
-      // <div key={index}>{value}</div>
-      // )
-    // )
+    [...Array(daysInTrip),].map(
+      (value: undefined, index: number) => (
+        <div key={index}>{index}</div>
+      )
+    )
   );
 }
 
