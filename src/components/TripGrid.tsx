@@ -19,7 +19,7 @@ function TripGrid({dateRange}: TripGridProps) {
     // Rendering elements by number of days
     [...Array(daysInTrip),].map(
       (value: undefined, index: number) => (
-        <div key={index}>{index}</div>
+        <div key={index}>Day: {index}</div>
       )
     )
   );
