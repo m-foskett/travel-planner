@@ -7,7 +7,7 @@ interface TripGridProps {
 }
 
 function TripGrid({dateRange}: TripGridProps) {
-  // Days in trip
+  // Days in the selected trip
   var daysInTrip: number = 2;
   // Calculate days within date range
   if(dateRange?.from && dateRange.to)
