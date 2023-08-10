@@ -23,7 +23,7 @@ function TripGrid({dateRange}: TripGridProps) {
           Day: {index}
           {/* Dropdown - Actions */}
           <div>
-            Actions
+            Actions Dropdown
           </div>
         </div>
       )
