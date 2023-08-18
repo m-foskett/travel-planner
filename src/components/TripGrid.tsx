@@ -6,12 +6,11 @@ interface TripGridProps {
   dateRange: DateRange | undefined,
 }
 
-function TripGrid({dateRange}: TripGridProps) {
+function TripGrid({ dateRange }: TripGridProps) {
   // Days in the selected trip
   var daysInTrip: number = 2;
   // Calculate days within date range
-  if(dateRange?.from && dateRange.to)
-  {
+  if (dateRange?.from && dateRange.to) {
     daysInTrip = differenceInDays(dateRange.to, dateRange.from) + 1;
   }
 
@@ -22,7 +21,7 @@ function TripGrid({dateRange}: TripGridProps) {
         <div key={index} className='text-lg text-white w-40 h-40 border border-solid border-white text-center'>
           Day: {index}
           {/* Dropdown - Actions */}
-          <div className='text-white font-bold text-xs text-center px-3 py-3 border border-solid'>
+          <div className='text-white font-bold text-xs text-center px-3 py-3 border border-solid border-white'>
             Actions Dropdown
           </div>
         </div>
