@@ -22,10 +22,11 @@ function TripGrid({ dateRange }: TripGridProps) {
           Day: {index}
           {/* Dropdown - Actions */}
           <div
-            className='text-white font-bold text-xs text-center px-3 py-3 border border-solid border-white w-20 h-10
-            bg-black hover:opacity-5 cursor:pointer italic underline flex-col'
+            className='text-white font-bold text-xs text-center border border-solid border-white w-20 h-5
+            bg-black hover:opacity-80 hover:cursor-pointer italic underline flex-col top-[10%] left-[74%] translate-x-[-50%]
+            translate-y-[-50%] relative'
           >
-            Actions Dropdown
+            Actions
           </div>
         </div>
       )
