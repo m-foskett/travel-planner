@@ -18,7 +18,7 @@ function TripGrid({ dateRange }: TripGridProps) {
     // Rendering elements by number of days
     [...Array(daysInTrip),].map(
       (value: undefined, index: number) => (
-        <div key={index} className='text-lg text-white w-40 h-40 border border-solid border-white text-center flex-row flex-wrap'>
+        <div key={index} className='text-lg text-black bg-white w-40 h-40 border border-solid border-black text-center flex-row flex-wrap'>
           Day: {index}
           {/* Dropdown - Actions */}
           <div
