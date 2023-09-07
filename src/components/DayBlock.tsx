@@ -15,6 +15,7 @@ const DayBlock = ({key, date, }: DayBlockProps) => {
     >
         Day: {key}
         {/* {date.toISOString()} */}
+        Add an event.
         {/* Dropdown - Actions */}
         <div
             className='text-white font-bold text-xs text-center border border-solid border-white w-20 h-5
