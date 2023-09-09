@@ -17,6 +17,7 @@ const DayBlock = ({key, date, }: DayBlockProps) => {
         {/* {date.toISOString()} */}
         Add an event.
         Add a place.
+        Add a checklist item.
         {/* Dropdown - Actions */}
         <div
             className='text-white font-bold text-xs text-center border border-solid border-white w-20 h-5
