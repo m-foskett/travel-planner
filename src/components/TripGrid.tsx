@@ -11,7 +11,7 @@ function TripGrid({ dateRange }: TripGridProps) {
   // Days in the selected trip
   var daysInTrip: number = 2;
   // All dates within trip
-  var datesInTrip: Date[];
+  var datesInTrip: Date[] = [];
   // Calculate days within date range
   if (dateRange?.from && dateRange.to) {
     daysInTrip = differenceInDays(dateRange.to, dateRange.from) + 1;
@@ -20,11 +20,13 @@ function TripGrid({ dateRange }: TripGridProps) {
       end: dateRange?.to as Date,
     });
   }
+  console.log([...Array(daysInTrip),].fill(0));
+  console.log(datesInTrip);
 
   return (
     // Rendering elements by number of days
-    [...Array(daysInTrip),].map(
-      (value: undefined, index: number) => (
+    [...Array(daysInTrip),].fill(0).map(
+      (_, index: number) => (
         <DayBlock key={index} date={datesInTrip[index]} />
       )
     )

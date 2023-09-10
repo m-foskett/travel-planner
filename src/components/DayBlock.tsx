@@ -1,33 +1,72 @@
-import React from 'react'
+import React, { ChangeEvent, useState } from 'react'
+import { Input } from './ui/Input'
 
 interface DayBlockProps {
-    key: number;
     date: Date,
 };
 
-const DayBlock = ({key, date, }: DayBlockProps) => {
+const DayBlock = ({date, }: DayBlockProps) => {
+    // State Variables
+    const [place, setPlace] = useState<string>('');
+    const [subheading, setSubheading] = useState<string>('');
+    const [checklistItem, setChecklistItem] = useState<string>('');
 
-  return (
-    <div
-        key={key}
-        className='text-lg text-black bg-white w-40 h-40 border border-solid border-black text-center
-        flex-row flex-wrap items-center justify-center font-bold italic underline'
-    >
-        Day: {key}
-        {/* {date.toISOString()} */}
-        Add an event.
-        Add a place.
-        Add a checklist item.
-        {/* Dropdown - Actions */}
+    // Subheading Input Change Handler
+    const subheadingInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        // Get the subheading input value from the event
+        setSubheading(event.target.value)
+    };
+    // Place Input Change Handler
+    const placeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        // Get the place input value from the event
+        setPlace(event.target.value)
+    };
+    // Checklist Item Input Change Handler
+    const checklistItemInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        // Get the checklist item input value from the event
+        setChecklistItem(event.target.value)
+    };
+
+    return (
         <div
-            className='text-white font-bold text-xs text-center border border-solid border-white w-20 h-5
-            bg-black hover:opacity-80 hover:cursor-pointer italic underline flex-col top-[10%] left-[74%] translate-x-[-50%]
-            translate-y-[-50%] relative'
+            className='text-lg text-black bg-white w-fill h-50 border border-solid border-black text-center
+            flex-row flex-wrap items-center justify-center font-bold italic underline'
         >
-            Actions
+            {date.toDateString()}
+            {/* Dropdown - Actions */}
+            <div
+                className='text-white font-bold text-xs text-center border border-solid border-white w-20 h-5
+                bg-black hover:opacity-80 hover:cursor-pointer italic underline flex-col top-[0%] left-[85%] translate-x-[-50%]
+                translate-y-[-50%] relative'
+            >
+                Actions
+            </div>
+            {/* Add a Subheading Input */}
+            <Input
+                placeholder='Add a subheading'
+                type='text'
+                id='subheadingInput'
+                name='subheadingInput'
+                onChange={subheadingInputHandler}
+            />
+            {/* Add a Place Input */}
+            <Input
+                placeholder='Add a place'
+                type='text'
+                id='placeInput'
+                name='placeInput'
+                onChange={placeInputHandler}
+            />
+            {/* Add a Checklist Item Input */}
+            <Input
+                placeholder='Add a checklist item'
+                type='text'
+                id='checklistItemInput'
+                name='checklistItemInput'
+                onChange={checklistItemInputHandler}
+            />
         </div>
-    </div>
-  )
+    )
 }
 
 export default DayBlock
