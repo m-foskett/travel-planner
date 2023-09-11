@@ -39,7 +39,7 @@ const DayBlock = ({date, }: DayBlockProps) => {
                 bg-black hover:opacity-80 hover:cursor-pointer italic underline flex-col top-[0%] left-[85%] translate-x-[-50%]
                 translate-y-[-50%] relative'
             >
-                Actions
+                Actions Dropdown
             </div>
             {/* Add a Subheading Input */}
             <Input
