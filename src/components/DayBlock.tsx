@@ -52,6 +52,7 @@ const DayBlock = ({date, }: DayBlockProps) => {
             />
             {/* Add a Place Input */}
             <Input
+                className='font-bold text-center bg-primary-950 text-white border-solid text-sm border-black'
                 placeholder='Add a place'
                 type='text'
                 id='placeInput'
@@ -60,6 +61,7 @@ const DayBlock = ({date, }: DayBlockProps) => {
             />
             {/* Add a Checklist Item Input */}
             <Input
+                className='font-bold text-center bg-primary-950 text-white border-solid text-sm border-black'
                 placeholder='Add a checklist item'
                 type='text'
                 id='checklistItemInput'
