@@ -43,7 +43,7 @@ const DayBlock = ({date, }: DayBlockProps) => {
             </div>
             {/* Add a Subheading Input */}
             <Input
-                className='font-bold text-center bg-primary-950 text-white border-solid text-sm border-black py-3 px-3 italic'
+                className='font-bold text-center bg-primary-950 text-white border-solid text-sm border-black py-3 px-3 italic flex'
                 placeholder='Add a subheading'
                 type='text'
                 id='subheadingInput'
