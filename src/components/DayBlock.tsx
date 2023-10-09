@@ -61,7 +61,7 @@ const DayBlock = ({date, }: DayBlockProps) => {
             />
             {/* Add a Checklist Item Input */}
             <Input
-                className='font-bold text-center bg-primary-950 text-primary-50 border-solid text-sm border-black py-3 px-3 italic flex'
+                className='font-bold text-center bg-primary-950 text-primary-50 border-solid text-sm border-primary-950 py-3 px-3 italic flex'
                 placeholder='Add a checklist item'
                 type='text'
                 id='checklistItemInput'
