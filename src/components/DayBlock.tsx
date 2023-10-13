@@ -35,7 +35,7 @@ const DayBlock = ({date, }: DayBlockProps) => {
             {date.toDateString()}
             {/* Dropdown - Actions */}
             <div
-                className='text-white font-bold text-xs text-center border border-solid border-white w-20 h-5
+                className='text-white font-bold text-xs text-center border border-solid border-primary-50 w-20 h-5
                 bg-black hover:opacity-80 hover:cursor-pointer italic underline flex-col top-[0%] left-[85%] translate-x-[-50%]
                 translate-y-[-50%] relative'
             >
