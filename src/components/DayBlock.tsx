@@ -29,7 +29,7 @@ const DayBlock = ({date, }: DayBlockProps) => {
 
     return (
         <div
-            className='text-xl  text-black bg-white w-fill h-50 border border-solid border-black text-center
+            className='text-xl  text-primary-950 bg-white w-fill h-50 border border-solid border-black text-center
             flex-row flex-wrap items-center justify-center font-bold italic underline'
         >
             {date.toDateString()}
